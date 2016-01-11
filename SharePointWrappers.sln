@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointWrappers", "src\SharePointWrappers\SharePointWrappers.csproj", "{C8F3B924-D218-41C7-9F31-EAABA6903DFF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePointWrappers.UnitTest", "test\SharePointWrappers.UnitTest\SharePointWrappers.UnitTest.csproj", "{79C60DEE-BEF0-4042-B818-05A294A1F455}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{C8F3B924-D218-41C7-9F31-EAABA6903DFF}.Debug.ActiveCfg = Debug|.NET
+		{C8F3B924-D218-41C7-9F31-EAABA6903DFF}.Debug.Build.0 = Debug|.NET
+		{C8F3B924-D218-41C7-9F31-EAABA6903DFF}.Release.ActiveCfg = Release|.NET
+		{C8F3B924-D218-41C7-9F31-EAABA6903DFF}.Release.Build.0 = Release|.NET
+		{79C60DEE-BEF0-4042-B818-05A294A1F455}.Debug.ActiveCfg = Debug|.NET
+		{79C60DEE-BEF0-4042-B818-05A294A1F455}.Debug.Build.0 = Debug|.NET
+		{79C60DEE-BEF0-4042-B818-05A294A1F455}.Release.ActiveCfg = Release|.NET
+		{79C60DEE-BEF0-4042-B818-05A294A1F455}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(SolutionItems) = postSolution
+		SharePointWrappers.build = SharePointWrappers.build
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

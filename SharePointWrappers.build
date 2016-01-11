@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<project name="SharePoint Wrappers" default="build" basedir=".">
+	<description>Build file for the SharePoint Wrapper Library.</description>
+
+	<!-- directories for builds -->
+	<property name="build.dir" value="build"/>
+	<property name="doc.dir" value="doc"/>
+		
+	<!-- debug | release -->
+	<property name="build.config" value="debug"/>
+
+	<target name="init" description="Initalizes building properties.">
+		<call target="${build.config}"/>
+	</target>
+
+	<target name="debug" description="Sets up a debug build."/>
+	
+	<target name="release" description="Sets up a release build."/>
+
+	<target name="test" depends="init" description="Runs all the Unit Tests for the solution."/>
+
+	<target name="clean">
+		<delete dir="${build.dir}" failonerror="false"/>
+		<delete dir="${doc.dir}" failonerror="false"/>
+	</target>
+
+	<target name="build" depends="test">
+		<solution configuration="${build.config}" solutionfile="SharePointWrappers.sln" outputdir="${build.dir}"/>
+	</target>
+	
+	<target name="run" depends="build"/>
+	
+	<target name="doc" depends="build">
+		<ndoc>
+		    <assemblies basedir="${build.dir}">
+		        <include name="SharePointWrappers.dll" />
+			</assemblies>
+		    <documenters>
+				<documenter name="MSDN">
+		            <property name="OutputDirectory" value="${doc.dir}" />
+				    <property name="HtmlHelpName" value="SharePointWrappers" />
+					<property name="HtmlHelpCompilerFilename" value="hhc.exe" />
+					<property name="Title" value="SharePoint Wrappers Class Library" />
+				    <property name="ShowVisualBasic" value="True" />
+		            <property name="OutputTarget" value="HtmlHelp" />
+					<property name="SdkLinksOnWeb" value="True" />
+				    <property name="AssemblyVersionInfo" value="AssemblyVersion" />
+		            <property name="CopyrightText" value="Bil Simser" />
+		            <property name="CopyrightHref" value="http://weblogs.asp.net/bsimser" />
+					<property name="FeedbackEmailAddress" value="bsimser@shaw.ca" />
+				    <property name="Preliminary" value="True" />
+		            <property name="CleanIntermediates" value="True" />
+				</documenter>
+		    </documenters> 
+		</ndoc>
+	</target>
+
+</project>
+        
